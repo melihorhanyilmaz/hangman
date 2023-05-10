@@ -7,7 +7,7 @@ This is a simple implementation of the classic hangman game in Python. The game 
 
 ## Installation
 - Clone the repository to your local machine using the following command: https://github.com/melihorhanyilmaz/hangman.git
-- Change directory to the cloned repository: cd hangman
+- Change directory to the cloned repository
 - Run the script main.py in your terminal using the following command: python main.py
 - Start the game
 
