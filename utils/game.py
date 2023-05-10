@@ -22,7 +22,7 @@ class Hangman():
         while self.lives > 0:
             letter: str = input(str("Please enter a single letter: ")).lower()
             print("*****************************")
-            # if-else conditions ensures that alphabet and single character
+            # if-else conditions ensures that the input grom the user is a alphabetical single character
             if len(letter) == 1 and letter.isalpha(): 
                 if letter in self.correctly_guessed_letters or letter in self.wrongly_guessed_letters:
                     print("You already guessed the letter", letter)
@@ -54,6 +54,7 @@ class Hangman():
         :will print `correctly_guessed_letters`, `bad_guessed_letters`, `life`, `error_count` and `turn_count` at the end of each turn.
         """
         while True:
+            # Adding list elements as strings
             print("".join(self.correctly_guessed_letters).upper())
             print("Wrong letters: " + ", ".join(self.wrongly_guessed_letters))
             print(f"Lives: {self.lives}, Errors: {self.error_count}, Turns: {self.turn_count}")
@@ -61,8 +62,8 @@ class Hangman():
             if self.lives == 0:
                 self.game_over()
                 break
-
-            elif "_" not in self.correctly_guessed_letters: # '_' ends when player knows all letters
+            # '_' ends when player knows all letters
+            elif "_" not in self.correctly_guessed_letters: 
                 self.well_played()
                 break
 
@@ -88,8 +89,7 @@ while True:
     hangman = Hangman()
     hangman.start_game()
     response = input("Play Again? (Y/N) : ")
-    if response.upper() == "Y":
-        continue
-    else:
+    if response.upper() != "Y":
         print("\nSee you later :)")
         break
+    print("\nLet's play")
